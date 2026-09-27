@@ -15,9 +15,8 @@
     "jsx": "react-jsx",
 
     /* Imports inside the reading project resolve relative to src/reading. */
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/reading/*"]
+      "@/*": ["./src/reading/*"]
     },
 
     /* Linting */
