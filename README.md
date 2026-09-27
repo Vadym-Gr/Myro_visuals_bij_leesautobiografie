@@ -1,4 +1,22 @@
-# Vanilla App Template
+# Myro visuals bij leesautobiografie
+
+[Жива сторінка](https://vadym-gr.github.io/Myro_visuals_bij_leesautobiografie/)
+
+## Налаштування цього репозиторію
+
+- Використовуй Node.js 24 та `npm ci` для встановлення залежностей із lockfile.
+- `npm run dev` запускає розробку; `npm run build` створює папку `dist`.
+- Шлях збірки: `/Myro_visuals_bij_leesautobiografie/`.
+- Workflow `.github/workflows/deploy.yml` запускається після push у `main`
+  або вручну через Actions → Run workflow та публікує `dist` у `gh-pages`.
+  Право `contents: write` вже задане у workflow; дозвіл створювати pull requests
+  для цього деплою не потрібний.
+- Після першого успішного деплою відкрий Settings → Pages, обери
+  **Deploy from a branch**, гілку **gh-pages**, папку **/(root)** та збережи.
+- Очікувана адреса сайту після ввімкнення Pages:
+  https://vadym-gr.github.io/Myro_visuals_bij_leesautobiografie/.
+
+Нижче наведено загальну документацію вихідного шаблону GoIT.
 
 Цей проект було створено за допомогою Vite. Для знайомства та налаштування
 додаткових можливостей [звернись до документації](https://vitejs.dev/).

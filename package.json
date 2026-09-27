@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/vanilla-app-template/",
+    "build": "vite build --base=/Myro_visuals_bij_leesautobiografie/",
     "preview": "vite preview"
   },
   "devDependencies": {
