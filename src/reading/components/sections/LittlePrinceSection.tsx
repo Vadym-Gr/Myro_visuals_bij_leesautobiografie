@@ -814,7 +814,7 @@ export default function LittlePrinceSection() {
 
       {/* ===== PARTICLE-TO-TEXT EFFECT ===== */}
       <div
-        className="absolute left-1/2 bottom-[14%] z-10 w-full max-w-6xl px-6 text-center"
+        className="absolute left-1/2 bottom-[calc(14%+4rem)] md:bottom-[14%] z-10 w-full max-w-6xl px-6 text-center"
         style={{
           transform: `translateX(-50%) scale(${0.96 + textFormP * 0.04})`,
           opacity: textFadeOut,
