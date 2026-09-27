@@ -24,7 +24,7 @@ function App() {
       <main>
         <SceneProgressContext.Provider value={progress}>
           {Scene ? <Scene /> : (
-            <div className="flex h-dvh flex-col items-center justify-center gap-5 px-6 text-center">
+            <div className="ending-screen flex h-dvh flex-col items-center justify-center gap-5 px-6 text-center">
               <h1 className="font-display text-3xl">Visuals bij leesautobiografie</h1>
               <p className="font-serif-c text-xl text-white/60">Een interactief literair kunstproject</p>
               <p className="font-serif-c text-lg text-white/70">v. Myroslav Hryshchenko</p>

@@ -814,7 +814,7 @@ export default function LittlePrinceSection() {
 
       {/* ===== PARTICLE-TO-TEXT EFFECT ===== */}
       <div
-        className="absolute left-1/2 bottom-[calc(14%+4rem)] md:bottom-[14%] z-10 w-full max-w-6xl px-6 text-center"
+        className="absolute left-1/2 bottom-[calc(14%+8rem)] md:bottom-[14%] z-10 w-full max-w-6xl px-6 text-center"
         style={{
           transform: `translateX(-50%) scale(${0.96 + textFormP * 0.04})`,
           opacity: textFadeOut,
@@ -857,34 +857,44 @@ export default function LittlePrinceSection() {
             color: 'rgba(255,240,210,0.95)',
           }}
         >
-          {QUOTE_LINES.map((line, lineIndex) => (
-            <span key={lineIndex} className="block md:whitespace-nowrap">
-            {line.split('').map((char, charIndex) => {
-            const i = charIndex + (lineIndex === 0 ? 0 : QUOTE_LINES[0].length + 1);
-            const threshold = charRevealThresholds[i];
-            const charP = clamp((p - threshold) / 0.04);
-            if (charP <= 0) return null;
-            const charBlur = (1 - charP) * 12;
-            const charOpacity = charP;
+          {QUOTE_LINES.map((line, lineIndex) => {
+            const words = line.split(' ');
+            const lineOffset = lineIndex === 0 ? 0 : QUOTE_LINES[0].length + 1;
             return (
-              <span
-                key={`char-${i}`}
-                style={{
-                  opacity: charOpacity,
-                  filter: `blur(${charBlur}px)`,
-                  textShadow: charP > 0.8
-                    ? `0 0 ${8 + textGlow * 12}px rgba(255,220,140,${0.6 + textGlow * 0.3})`
-                    : 'none',
-                  display: char === ' ' ? 'inline' : 'inline-block',
-                  transition: 'all 0.05s linear',
-                }}
-              >
-                {char}
+              <span key={lineIndex} className="block md:whitespace-nowrap">
+                {words.map((word, wordIndex) => {
+                  const wordOffset = lineOffset + words.slice(0, wordIndex).join(' ').length + (wordIndex > 0 ? 1 : 0);
+                  return (
+                    <span key={wordIndex}>
+                      {wordIndex > 0 ? ' ' : null}
+                      <span className="inline-block whitespace-nowrap">
+                        {word.split('').map((char, charIndex) => {
+                          const i = wordOffset + charIndex;
+                          const charP = clamp((p - charRevealThresholds[i]) / 0.04);
+                          return (
+                            <span
+                              key={`char-${i}`}
+                              style={{
+                                opacity: charP,
+                                filter: `blur(${(1 - charP) * 12}px)`,
+                                textShadow: charP > 0.8
+                                  ? `0 0 ${8 + textGlow * 12}px rgba(255,220,140,${0.6 + textGlow * 0.3})`
+                                  : 'none',
+                                display: 'inline-block',
+                                transition: 'all 0.05s linear',
+                              }}
+                            >
+                              {char}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    </span>
+                  );
+                })}
               </span>
             );
-            })}
-            </span>
-          ))}
+          })}
         </p>
       </div>
 

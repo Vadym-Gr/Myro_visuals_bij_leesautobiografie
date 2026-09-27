@@ -59,6 +59,7 @@ export default function RulesSection() {
       className="relative h-screen w-full overflow-hidden vignette"
       style={{
         background: 'linear-gradient(to bottom, #2e2218 0%, #241a12 30%, #1e1510 60%, #18100a 100%)',
+        opacity: 1 - easeInOut(range(p, 0.82, 1)),
       }}
     >
       {/* ===== WARM AMBIENT ROOM LIGHT ===== */}

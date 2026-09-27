@@ -193,6 +193,19 @@ html, body, #root {
   height: 100dvh;
 }
 
+@keyframes ending-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ending-screen {
+  animation: ending-reveal 900ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ending-screen { animation: none; }
+}
+
 .scene-player[data-paused="true"] *,
 .scene-player[data-paused="true"] *::before,
 .scene-player[data-paused="true"] *::after {
