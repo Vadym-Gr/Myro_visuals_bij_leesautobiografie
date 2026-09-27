@@ -2,6 +2,19 @@
 
 [Жива сторінка](https://vadym-gr.github.io/Myro_visuals_bij_leesautobiografie/)
 
+## Page 2 — Visuals bij leesautobiografie
+
+На `page-2.html` інтегровано проєкт із архіву `visuals-bij-leesautobiografie.rar`:
+чотири анімовані літературні сцени, автоматичне відтворення, пауза та повтор.
+Пробіл перемикає паузу; назва у верхньому лівому куті повертає на головну.
+
+- Вихідний код React/TypeScript: `src/reading`.
+- Стилі Tailwind та анімації підключені лише на Page 2.
+- `npm run typecheck` перевіряє TypeScript.
+- `npm run preview` після збірки відкриває сайт із базовим шляхом GitHub Pages.
+- Шрифти завантажуються з Google Fonts; за відсутності мережі використовуються
+  резервні системні шрифти.
+
 ## Налаштування цього репозиторію
 
 - Використовуй Node.js 24 та `npm ci` для встановлення залежностей із lockfile.

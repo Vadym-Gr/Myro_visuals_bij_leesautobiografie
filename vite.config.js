@@ -3,6 +3,8 @@ import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
+import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig(({ command }) => {
   return {
@@ -10,6 +12,11 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src/reading', import.meta.url)),
+      },
+    },
     build: {
       sourcemap: true,
       rollupOptions: {
@@ -38,6 +45,7 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
     },
     plugins: [
+      react(),
       injectHTML(),
       FullReload(['./src/**/**.html']),
       SortCss({

@@ -10,6 +10,14 @@
   align-items: center;
   justify-content: center;
 }
+.header-home .nav {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.header-home .nav-logo {
+  max-width: 100%;
+}
 .nav-list {
   display: flex;
   align-items: center;
