@@ -27,8 +27,11 @@ function App() {
             <div className="ending-screen flex h-dvh flex-col items-center justify-center gap-5 px-6 text-center">
               <h1 className="font-display text-3xl">Visuals bij leesautobiografie</h1>
               <p className="font-serif-c text-xl text-white/60">Een interactief literair kunstproject</p>
-              <p className="font-serif-c text-lg text-white/70">v. Myroslav Hryshchenko</p>
-              <div className="flex flex-col items-center gap-3 sm:flex-row">
+              <p className="font-serif-c text-lg leading-relaxed text-white/70">
+                v. Myroslav Hryshchenko
+                <span className="mt-1 block">leerling van mevrouw Marlies Coorevits</span>
+              </p>
+              <div className="mt-2 flex shrink-0 flex-col items-center gap-3 sm:flex-row">
                 <button className="rounded-full border border-white/30 px-6 py-3 hover:bg-white/10" onClick={() => navigate(0)}>
                   Opnieuw beleven
                 </button>
